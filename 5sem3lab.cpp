@@ -59,6 +59,12 @@ int main()
 	cout << "Время QuickSort: " << duration.count() << " ms\n";
 	copy_arr(arr, temp_arr, length);
 
+	start = chrono::high_resolution_clock::now();
+	sort(temp_arr, temp_arr+length);
+	end = chrono::high_resolution_clock::now();
+	duration = end - start;
+	cout << "Время std::sort: " << duration.count() << " ms\n";
+	show_arr(temp_arr, length);
+
     system("pause");
 }
-
